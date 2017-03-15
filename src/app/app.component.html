@@ -1,3 +1,29 @@
-<h1>
-  {{title}}
-</h1>
+<header>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a routerLink="/" class="navbar-brand" routerLinkActive="active">DEMO ON ANGULAR 2</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a routerLink="/" routerLinkActive="active">Home</a></li>
+				<li><a routerLink="/about" routerLinkActive="active">About</a></li>
+				<li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<button class="btn btn-primary btn-margin" (click)="auth.login()"
+					*ngIf="!auth.authenticated()">Log In</button>
+				<button class="btn btn-primary btn-margin" (click)="auth.logout()"
+					*ngIf="auth.authenticated()">Log Out</button>
+
+			</ul>
+		</div>
+	</nav>
+</header>
+
+<div class="jumbotron text-center">
+	<h1>The App Lives!</h1>
+	<p>{{ message }}</p>
+</div>
+
+<main> <router-outlet></router-outlet>

@@ -1,0 +1,33 @@
+
+<h4 *ngIf="!auth.authenticated()">You are not logged in, please
+	click 'Log in' button to login</h4>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<div class="container-fluid" *ngIf="auth.authenticated() && auth.userProfile">
+	<div class="col-sm-8 text-center">
+		<div class="profile-card">
+			<img class="img-responsive img-circle"
+						[src]="auth.userProfile.picture">
+			<h2>{{auth.userProfile.name}}</h2>
+			<h6>{{auth.userProfile.email}}</h6>
+			<h6>Nickname: {{auth.userProfile.nickname}}</h6>
+		</div>
+
+
+	</div>
+
+</div>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
